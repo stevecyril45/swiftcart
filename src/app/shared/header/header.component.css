@@ -1,0 +1,9 @@
+  .btn-primary {
+            color: var(--white);
+            
+        }
+
+        .btn-primary:hover {
+            background-color: #00796B;/* Slightly darker orange */
+            transform: translateY(-2px);
+        }

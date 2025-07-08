@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+.about-page-container {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa; /* Bootstrap's light background */
+  color:#333333  /* Bootstrap's dark text */
+}
+
+/* Hero Banner Specific Styles */
+.hero-banner {
+  min-height: 600px; /* Adjust height as needed */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; /* Ensure rounded corners clip content */
+}
+
+
+
+/* Section Padding & Margins */
+section {
+  padding-top: 3rem; /* py-5 */
+  padding-bottom: 3rem; /* py-5 */
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-left: 3rem; /* px-lg-5 */
+    padding-right: 3rem; /* px-lg-5 */
+  }
+}
+
+/* Card Styles for Values & Team */
+.card {
+  border-radius: 0.5rem; /* Bootstrap rounded */
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Bootstrap shadow-sm */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Team Photo Specific Styles */
+.team-photo {
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-photo:hover {
+  transform: scale(1.05);
+}
+
+/* Call-to-Action Button Animations */
+.animate-button {
+  transition: all 0.3s ease-in-out;
+}
+
+.animate-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* Animate.css Integration */
+/* Import Animate.css in your global styles.css or index.html */
+/* @import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'; */
+
+/* Custom animation delays if needed */
+.animate__animated {
+  --animate-duration: 1s;
+  --animate-delay: 0s;
+}
+
+/* Example of specific animation for elements */
+.img-fluid.animate__animated {
+  --animate-duration: 1.5s;
+}
+
+/* Ensure sections are initially hidden or have opacity 0 before animation */
+.animated-section {
+  opacity: 0;
+}
+
+.animated-section.animate__animated {
+  opacity: 1; /* Make visible when animation starts */
+}
+.btn{
+  color: #f8f9fa;
+  background-color: #FFA000 ;
+}
+.btn:hover {
+  background-color: #00796B;
+}
+.map-section iframe {
+  transition: transform 0.3s ease-in-out;
+}
+
+.map-section iframe:hover {
+  transform: scale(1.01);
+}
+.text-orange {
+  color: #FFA000;
+}
+
+.testimonials .card {
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffff;
+  transition: transform 0.3s;
+}
+
+.testimonials .card:hover {
+  transform: translateY(-5px);
+}
