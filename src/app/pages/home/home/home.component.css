@@ -39,23 +39,7 @@
             padding: 0 20px;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-align: center;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            color: var(--white);
-            
-        }
-
-        .btn-primary:hover {
+        .btn:hover {
             background-color: #00796B;/* Slightly darker orange */
             transform: translateY(-2px);
         }
@@ -250,7 +234,7 @@
             top: 0;
         }
 
-        .services-overview .btn-primary {
+        .services-overview .btn {
             display: block;
             margin: 50px auto 0;
             width: fit-content;
@@ -365,7 +349,7 @@
             color: var(--light-gray);
         }
 
-        .how-it-works .btn-primary {
+        .how-it-works .btn {
             display: block;
             margin: 50px auto 0;
             width: fit-content;
@@ -700,25 +684,15 @@
   transition: background 0.3s;
 }
 
-.btn.primary {
+.btn {
   background: #FFA000;
   color: white;
 }
 
-.btn.primary:hover {
-  background: #e68900;
-}
 
-.btn.secondary {
-  background: white;
-  border: 2px solid #00796B;
-  color: #00796B;
-}
 
-.btn.secondary:hover {
-  background: #00796B;
-  color: white;
-}
+
+
 
 .summary {
   text-align: center;

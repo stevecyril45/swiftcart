@@ -1,0 +1,88 @@
+.Book {
+  font-size: 60px;
+}
+
+/* Hero Section */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 550px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  color: #fff;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #FFA500; /* SwiftCart Orange */
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* Container */
+.booking-form-container {
+  max-width: 800px;        /* tighter, centered */
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Inputs */
+.form-control {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Button */
+.btn {
+  display: block;
+  width: 30%;
+  padding: 0.75rem;
+  background-color: #FFA000; /* Vibrant Orange */
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00796B; /* SwiftCart Teal */
+  transform: translateY(-2px);
+}
+
+/* Validation messages */
+.text-danger,
+.invalid-feedback {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  color: #dc3545; /* Bootstrap red */
+}

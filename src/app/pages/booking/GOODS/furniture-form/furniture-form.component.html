@@ -1,0 +1,103 @@
+<div class="hero-container">
+  <img src="../../../../../assets/images/booking/good&furniture.png" class="hero-image">
+
+  <div class="overlay">
+    <h1 class="Book">GOODS/FURNITURE TRANSPORT MOVE</h1>
+  </div>
+</div>
+<hr>
+<div class="booking-form-container">
+  <h2>Book a Move (Goods/Furniture Transport)</h2>
+
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input id="fullName" type="text" formControlName="fullName" class="form-control" required>
+      <div *ngIf="isInvalid('fullName')" class="text-danger">
+        Please enter your full name.
+      </div>
+    </div>
+
+
+    <!-- Phone Number -->
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="tel" formControlName="phone" class="form-control" required>
+      <div *ngIf="isInvalid('phone')" class="text-danger">
+        Please enter a valid phone number.
+      </div>
+    </div>
+
+    <!-- Pickup Address -->
+    <div class="form-group">
+      <label for="pickup">Pickup Address</label>
+      <textarea id="pickup" formControlName="pickupAddress" class="form-control" required></textarea>
+      <div *ngIf="isInvalid('pickupAddress')" class="text-danger">
+        Pickup address is required.
+      </div>
+    </div>
+
+    <!-- Drop-off Address -->
+    <div class="form-group">
+      <label for="dropoff">Drop-off Address</label>
+      <textarea id="dropoff" formControlName="dropoffAddress" class="form-control" required></textarea>
+      <div *ngIf="isInvalid('dropoffAddress')" class="text-danger">
+        Drop-off address is required.
+      </div>
+    </div>
+
+    <!-- Item Type -->
+    <div class="form-group">
+      <label for="itemType">Item Type</label>
+      <select id="itemType" formControlName="itemType" class="form-control" required>
+        <option value="">-- Select Item Type --</option>
+        <option>Furniture</option>
+        <option>Appliances</option>
+        <option>Boxes</option>
+        <option>Office Equipment</option>
+        <option>Others</option>
+      </select>
+      <div *ngIf="isInvalid('itemType')" class="text-danger">
+        Please select an item type.
+      </div>
+    </div>
+
+    <!-- Preferred Date -->
+    <div class="form-group">
+      <label for="date">Preferred Date</label>
+      <input id="date" type="date" formControlName="preferredDate" class="form-control" required>
+      <div *ngIf="isInvalid('preferredDate')" class="text-danger">
+        Please choose a preferred date.
+      </div>
+    </div>
+
+    <!-- Preferred Time -->
+    <div class="form-group">
+      <label for="time">Preferred Time</label>
+      <input id="time" type="time" formControlName="preferredTime" class="form-control" required>
+      <div *ngIf="isInvalid('preferredTime')" class="text-danger">
+        Please choose a preferred time.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn">
+      Submit Booking Request
+    </button>
+  </form>
+</div>
+
+<!-- ✅ Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true"
+  #successModal>
+  <div class="modal-dialog">
+    <div class="modal-content text-center p-4">
+      <h5 class="modal-title mb-3" id="successModalLabel">Booking Successful 🎉</h5>
+      <p>
+        Thanks for booking with <strong>{{ businessName }}</strong>! <br>
+        We’ll contact you shortly to confirm the details.
+      </p>
+      <button type="button" class="btn btn-success mt-3" data-bs-dismiss="modal">OK</button>
+    </div>
+  </div>
+</div>

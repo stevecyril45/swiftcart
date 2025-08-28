@@ -1,0 +1,468 @@
+/* Define new color variables */
+:root {
+  --deep-teal: #008080;
+  --vibrant-orange: #ffa500;
+  --darker-orange: #e69500; /* A slightly darker orange for hover */
+  --light-teal-bg: #e0f2f2; /* A lighter shade of teal for backgrounds */
+  --light-orange-bg: #fff5e0; /* A lighter shade of orange for backgrounds */
+}
+
+/* Base Styles */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9fafb; /* bg-gray-50 */
+  color: #333333; /* text-gray-800 */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  scroll-behavior: smooth; /* Smooth scroll for anchor links */
+}
+#hero{
+  margin-top: -40px;
+}
+/* Section Styling */
+section {
+  padding: 4rem 1rem; /* py-16 px-4 */
+  margin: 1rem; /* m-4 */
+  background-color: #ffffff; /* bg-white */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  border-radius: 0.5rem; /* rounded-lg */
+  text-align: center;
+}
+
+/* Max width for content within sections */
+.max-w-4xl {
+  max-width: 56rem; /* Equivalent to max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w-5xl {
+  max-width: 64rem; /* Equivalent to max-w-5xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w-3xl {
+  max-width: 48rem; /* Equivalent to max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Headings */
+h1 {
+  font-size: 3rem; /* text-4xl */
+  font-weight: 800; /* font-extrabold */
+  margin-bottom: 1rem; /* mb-4 */
+  line-height: 1.25; /* leading-tight */
+  color: #008080; /* Primary color for H1 */
+}
+
+h2 {
+  font-size: 2.25rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1.5rem; /* mb-6 */
+  color: #008080; /* Primary color for H2 */
+}
+
+h3 {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.75rem; /* mb-3 */
+  color: #008080; /* Primary color for H3 */
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.625; /* leading-relaxed */
+  color: #333333; /* text-gray-600 */
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #ffa500; /* Secondary color for buttons */
+  color: #ffffff; /* text-white */
+  font-weight: 700; /* font-bold */
+  padding: 0.75rem 2rem; /* py-3 px-8 */
+  border-radius: 9999px; /* rounded-full */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  font-size: 1.125rem; /* text-lg */
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background-color: #008080;
+  color: #ffffff; /* Darker orange on hover */
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 600px; /* Fixed height for hero banner */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333333;
+  overflow: hidden;
+  margin-left: 0px;
+}
+
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-overlay h1 {
+  font-size: 2.25rem; /* sm:text-5xl */
+  margin-bottom: 1rem;
+  color: #ffffff; /* Keep hero H1 white for contrast */
+}
+
+.hero-overlay p {
+  font-size: 1.25rem; /* sm:text-2xl */
+  margin-bottom: 2rem; /* mb-8 */
+  font-weight: 500; /* font-medium */
+  color: #ffffff; /* Keep hero paragraph white for contrast */
+}
+
+.hero-overlay .tagline {
+  font-size: 1.125rem; /* text-lg */
+  margin-bottom: 2.5rem; /* mb-10 */
+  max-width: 42rem; /* max-w-2xl */
+}
+
+/* How It Works & Why Choose Us Grids */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr; /* grid-cols-1 */
+  gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 768px) {
+  /* md: breakpoint */
+  .grid-container.md-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-container.md-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* lg: breakpoint */
+  .grid-container.lg-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card Styles */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem; /* p-6 */
+  background-color: #ffffff;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05); /* hover:scale-105 */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04); /* hover:shadow-xl */
+}
+
+.card .icon {
+  color: #ffa500; /* Primary color for icons */
+  font-size: 3.125rem; /* text-5xl */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.card p {
+  font-size: 1rem; /* text-base */
+  text-align: center;
+}
+
+/* Icon Animation */
+.icon-bounce:hover {
+  animation: bounce 0.6s ease-in-out;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Service Coverage Specifics */
+.coverage-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* grid-cols-1 */
+  gap: 1.5rem; /* gap-6 */
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  /* sm: breakpoint */
+  .coverage-grid.sm-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.coverage-area {
+  padding: 1rem; /* p-4 */
+  background-color: #e0f2f2; /* Lighter teal background */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+.coverage-area h3 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.coverage-area .icon {
+  color: #ffa500; /* Primary color for icons */
+  margin-right: 0.75rem; /* mr-3 */
+}
+
+.coverage-area ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  color: #333333; /* text-gray-700 */
+  margin-left: 1.5rem; /* ml-6 */
+}
+
+.map-placeholder {
+  margin-top: 2.5rem; /* mt-10 */
+  padding: 1rem; /* p-4 */
+  background-color: #f3f4f6; /* bg-gray-100 */
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid #e5e7eb; /* border border-gray-200 */
+  color: #333333; /* text-gray-500 */
+  font-size: 0.875rem; /* text-sm */
+  align-items: center;
+}
+.map-container {
+  width: 80%; /* Adjust as needed */
+  max-width: 800px; /* Max width for larger screens */
+  height: 450px; /* Adjust as needed */
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures no scrollbars on the iframe container */
+  margin-left: 90px;
+}
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.map-placeholder .icon {
+  color: #ffa500; /* Primary color for map icon */
+  font-size: 2.5rem; /* text-4xl */
+  margin-bottom: 0.75rem; /* mb-3 */
+}
+
+.map-placeholder img {
+  margin-top: 1rem; /* mt-4 */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Testimonials Section */
+.testimonial-block {
+  background-color: var(--light-orange-bg); /* Lighter orange background */
+  padding: 2rem; /* p-8 */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  border-left: 4px solid var(--vibrant-orange); /* Secondary color for border */
+}
+
+.testimonial-block blockquote {
+  font-size: 1.125rem; /* text-lg */
+  font-style: italic;
+  color: #333333; /* text-gray-700 */
+  margin-bottom: 1rem; /* mb-4 */
+  line-height: 1.625; /* leading-relaxed */
+}
+
+.testimonial-block p {
+  font-size: 1rem; /* text-base */
+  font-weight: 600; /* font-semibold */
+  color: #333333; /* text-gray-800 */
+}
+
+/* Call-to-Action Section */
+.cta-section {
+  background-color: #ffa500; /* Primary color for CTA background */
+  color: #333333;
+  padding: 4rem 1rem; /* py-16 px-4 */
+  margin: 1rem; /* m-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  text-align: center;
+}
+
+.cta-section h2 {
+  color: #008080;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.cta-section p {
+  color: #333333;
+  margin-bottom: 2.5rem; /* mb-10 */
+}
+
+.cta-section .btn-primary {
+  background-color: #e69500;
+  color: #ffffff; /* Secondary colorfor CTA button text */
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+.cta-section .btn-primary:hover {
+  background-color: #008080; /* hover:bg-gray-100 */
+}
+
+.cta-section .contact-info {
+  margin-top: 2rem; /* mt-8 */
+  font-size: 1.125rem; /* text-lg */
+}
+
+.cta-section .contact-info p {
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.cta-section .contact-info a {
+  color: #333333;
+  text-decoration: none;
+}
+
+.cta-section .contact-info a:hover {
+  text-decoration: underline;
+}
+
+.cta-section .contact-info .icon {
+  margin-right: 0.75rem; /* mr-3 */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 640px) {
+  /* sm: breakpoint */
+  section {
+    padding: 4rem 2rem; /* sm:px-8 */
+    margin: 2rem; /* sm:m-8 */
+  }
+  .hero-overlay {
+    padding: 2rem; /* sm:p-8 */
+  }
+  .hero-overlay h1 {
+    font-size: 3rem; /* sm:text-5xl */
+  }
+  .hero-overlay p {
+    font-size: 1.5rem; /* sm:text-2xl */
+  }
+  h2 {
+    font-size: 2.5rem; /* sm:text-4xl */
+  }
+  p {
+    font-size: 1.25rem; /* sm:text-xl */
+  }
+  .btn-primary {
+    font-size: 1.25rem; /* sm:text-xl */
+  }
+  .card h3 {
+    font-size: 1.5rem; /* sm:text-2xl */
+  }
+  .card p {
+    font-size: 1.125rem; /* sm:text-lg */
+  }
+  .testimonial-block blockquote {
+    font-size: 1.25rem; /* sm:text-xl */
+  }
+  .testimonial-block p {
+    font-size: 1.125rem; /* sm:text-lg */
+  }
+  .cta-section h2 {
+    font-size: 2.5rem; /* sm:text-4xl */
+  }
+  .cta-section p {
+    font-size: 1.25rem; /* sm:text-xl */
+  }
+  .cta-section .contact-info {
+    font-size: 1.25rem; /* sm:text-xl */
+  }
+}
+
+@media (min-width: 768px) {
+  /* md: breakpoint */
+  .hero-overlay h1 {
+    font-size: 3.75rem; /* md:text-6xl */
+  }
+  .hero-overlay p {
+    font-size: 1.875rem; /* md:text-3xl */
+  }
+}
+/* Fade-out on scroll animation */
+@keyframes fadeOutOnScroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+.fade-out-scroll {
+  opacity: 1;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.fade-out-scroll.scrolled {
+  opacity: 0;
+  transform: translateY(40px);
+}
+/* Your existing card styling will apply to the testimonial cards */
+.testimonials .card {
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffff;
+  transition: transform 0.3s;
+}
+
+.testimonials .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Your custom orange text class */
+.text-orange {
+  color: #FFA000;
+}

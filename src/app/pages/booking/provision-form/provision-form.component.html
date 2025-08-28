@@ -1,0 +1,112 @@
+<div class="hero-container">
+  <img src="../../../../assets/images/booking/wholesale.png" class="hero-image">
+  <div class="overlay">
+    <h1 class="Book">WHOLESALE INQUIRY</h1>
+  </div>
+</div>
+
+<hr>
+
+<div class="container my-5">
+  <h2 class="mb-4 text-center">Wholesale Inquiry</h2>
+
+  <div class="booking-form-container">
+    <form [formGroup]="provisionForm" (ngSubmit)="onSubmit()">
+      
+      <!-- Name -->
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" formControlName="name" class="form-control"
+               [ngClass]="{'is-invalid': (submitted || f.name.touched) && f.name.errors}" />
+        <div *ngIf="(submitted || f.name.touched) && f.name.errors" class="invalid-feedback">
+          Please fill in this field
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="mb-3">
+        <label class="form-label">Phone Number</label>
+        <input type="text" formControlName="phone" class="form-control"
+               [ngClass]="{'is-invalid': (submitted || f.phone.touched) && f.phone.errors}" />
+        <div *ngIf="(submitted || f.phone.touched) && f.phone.errors" class="invalid-feedback">
+          <span *ngIf="f.phone.errors['required']">Please fill in this field</span>
+          <span *ngIf="f.phone.errors['pattern']">Only numbers are allowed</span>
+        </div>
+      </div>
+
+      <!-- Business Name -->
+      <div class="mb-3">
+        <label class="form-label">Business Name</label>
+        <input type="text" formControlName="business" class="form-control"
+               [ngClass]="{'is-invalid': (submitted || f.business.touched) && f.business.errors}" />
+        <div *ngIf="(submitted || f.business.touched) && f.business.errors" class="invalid-feedback">
+          Please fill in this field
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" formControlName="email" class="form-control"
+               [ngClass]="{'is-invalid': (submitted || f.email.touched) && f.email.errors}" />
+        <div *ngIf="(submitted || f.email.touched) && f.email.errors" class="invalid-feedback">
+          <span *ngIf="f.email.errors['required']">Please fill in this field</span>
+          <span *ngIf="f.email.errors['email']">Enter a valid email address</span>
+        </div>
+      </div>
+
+      <!-- Requested Products -->
+      <div class="mb-3">
+        <label class="form-label">Requested Products</label>
+        <textarea formControlName="products" rows="3" class="form-control"
+                  [ngClass]="{'is-invalid': (submitted || f.products.touched) && f.products.errors}"></textarea>
+        <div *ngIf="(submitted || f.products.touched) && f.products.errors" class="invalid-feedback">
+          Please fill in this field
+        </div>
+      </div>
+
+      <!-- Preferred Delivery Location -->
+      <div class="mb-3">
+        <label class="form-label">Preferred Delivery Location</label>
+        <input type="text" formControlName="location" class="form-control"
+               [ngClass]="{'is-invalid': (submitted || f.location.touched) && f.location.errors}" />
+        <div *ngIf="(submitted || f.location.touched) && f.location.errors" class="invalid-feedback">
+          Please fill in this field
+        </div>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="mb-3">
+        <label class="form-label">Additional Info / Budget</label>
+        <textarea formControlName="info" rows="3" class="form-control"
+                  [ngClass]="{'is-invalid': (submitted || f.info.touched) && f.info.errors}"></textarea>
+        <div *ngIf="(submitted || f.info.touched) && f.info.errors" class="invalid-feedback">
+          Please fill in this field
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn">
+        Contact Us for Quote
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ✅ Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-success" id="successModalLabel">Success!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ✅ Thanks for reaching out. A wholesale agent will contact you within 24 hours.
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
