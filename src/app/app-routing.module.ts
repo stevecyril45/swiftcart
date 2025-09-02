@@ -9,7 +9,7 @@ import { GoodsFurnitureComponent } from './pages/services/goods-furniture/goods-
 import { ProvisionAndSupplyComponent } from './pages/services/provision-and-supply/provision-and-supply.component';
 import { FURNITUREFormComponent } from './pages/booking/GOODS/furniture-form/furniture-form.component';
 import { PROVISIONFormComponent } from './pages/booking/provision-form/provision-form.component';
-
+import { QuoteComponent } from './shared/quote/quote.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,11 +20,15 @@ const routes: Routes = [
   {path: 'goods&furniture', component:GoodsFurnitureComponent},
   {path: 'provision&supply', component:ProvisionAndSupplyComponent},
   {path: 'furniture', component:FURNITUREFormComponent},
-  {path: 'provision', component:PROVISIONFormComponent}
+  {path: 'provision', component:PROVISIONFormComponent},
+  {path: 'quote', component:QuoteComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { 
+     scrollPositionRestoration: 'enabled', // ✅ always go to top on navigation
+    anchorScrolling: 'enabled'   })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

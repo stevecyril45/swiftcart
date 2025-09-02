@@ -1,0 +1,205 @@
+<!-- Hero Section -->
+<div>
+    <img src="../../../assets/images/quote/quote.png" alt="" width="100%" height="450px">
+    <section class="hero bg-light text-center py-5">
+        <div class="container">
+            <h1 class="display-5 fw-bold" style="color:#FFA000;">Get Your Personalized Quote Today</h1>
+            <p style="font-size:large">
+                Tell us what you need, and we’ll give you the best price — fast, transparent, and tailored to you.
+            </p>
+        </div>
+    </section>
+</div>
+
+<!-- Form Section -->
+<section class="quote-form py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+
+            <!-- Form Column -->
+            <div class="col-lg-7">
+                <h2 class="mb-4 " style="color:#FFA000;">Request a Quote</h2>
+                <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()">
+
+                    <!-- Full Name -->
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" formControlName="fullName">
+                        <div *ngIf="(f.fullName.touched || submitted) && f.fullName.errors" class="text-danger small">
+                            Name is required
+                        </div>
+                    </div>
+
+                    <!-- Phone/Email -->
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="number" class="form-control" formControlName="contact">
+                        <div *ngIf="(f.contact.touched || submitted) && f.contact.errors" class="text-danger small">
+                            Phone number is required
+                        </div>
+                    </div>
+
+                    <!-- Service Type -->
+                    <div class="mb-3">
+                        <label class="form-label">Service Type</label>
+                        <select class="form-select" formControlName="serviceType">
+                            <option value="" disabled>Select...</option>
+                            <option value="transport">Goods/Furniture Transport</option>
+                            <option value="provision">Provision Supply</option>
+                        </select>
+                        <div *ngIf="(f.serviceType.touched || submitted) && f.serviceType.errors"
+                            class="text-danger small">
+                            Please select a service
+                        </div>
+                    </div>
+
+                    <!-- Transport Fields -->
+                    <div *ngIf="f.serviceType.value === 'transport'">
+                        <div class="mb-3">
+                            <label class="form-label">Pickup Location</label>
+                            <input type="text" class="form-control" formControlName="pickup">
+                            <div *ngIf="(f.pickup.touched || submitted) && f.pickup.errors" class="text-danger small">
+                                Pickup location is required
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Drop-off Location</label>
+                            <input type="text" class="form-control" formControlName="dropoff">
+                            <div *ngIf="(f.dropoff.touched || submitted) && f.dropoff.errors" class="text-danger small">
+                                Drop-off location is required
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Type of Move</label>
+                            <select class="form-select" formControlName="moveType">
+                                <option value="" disabled>Select...</option>
+                                <option>Home</option>
+                                <option>Office</option>
+                                <option>Single Item</option>
+                            </select>
+                            <div *ngIf="(f.moveType.touched || submitted) && f.moveType.errors"
+                                class="text-danger small">
+                                Please select a move type
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Item(s) Description</label>
+                            <textarea class="form-control" rows="3" formControlName="itemsDesc"></textarea>
+                            <div *ngIf="(f.itemsDesc.touched || submitted) && f.itemsDesc.errors"
+                                class="text-danger small">
+                                Item description is required
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Preferred Date & Time</label>
+                            <input type="datetime-local" class="form-control" formControlName="preferredDate">
+                            <div *ngIf="(f.preferredDate.touched || submitted) && f.preferredDate.errors"
+                                class="text-danger small">
+                                Preferred date & time is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Provision Fields -->
+                    <div *ngIf="f.serviceType.value === 'provision'">
+                        <div class="mb-3">
+                            <label class="form-label">Delivery Address</label>
+                            <input type="text" class="form-control" formControlName="deliveryAddress">
+                            <div *ngIf="(f.deliveryAddress.touched || submitted) && f.deliveryAddress.errors"
+                                class="text-danger small">
+                                Delivery address is required
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Order Type</label>
+                            <select class="form-select" formControlName="orderType">
+                                <option value="" disabled>Select...</option>
+                                <option>Retail</option>
+                                <option>Wholesale</option>
+                            </select>
+                            <div *ngIf="(f.orderType.touched || submitted) && f.orderType.errors"
+                                class="text-danger small">
+                                Please select an order type
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Item(s) Needed</label>
+                            <textarea class="form-control" rows="3" formControlName="itemsNeeded"></textarea>
+                            <div *ngIf="(f.itemsNeeded.touched || submitted) && f.itemsNeeded.errors"
+                                class="text-danger small">
+                                Please enter the items needed
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Quantity / Bulk size</label>
+                            <input type="text" class="form-control" formControlName="quantity">
+                            <div *ngIf="(f.quantity.touched || submitted) && f.quantity.errors"
+                                class="text-danger small">
+                                Quantity is required
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Preferred Delivery Date</label>
+                            <input type="date" class="form-control" formControlName="deliveryDate">
+                            <div *ngIf="(f.deliveryDate.touched || submitted) && f.deliveryDate.errors"
+                                class="text-danger small">
+                                Preferred delivery date is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="mb-3">
+                        <label class="form-label">Upload File (Optional)</label>
+                        <input type="file" class="form-control" (change)="onFileSelected($event)">
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button type="submit" class="btn">
+                        Submit Request
+                    </button>
+                </form>
+
+                <!-- Success Modal -->
+                <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content text-center p-4">
+                            <div class="modal-header border-0">
+                                <h5 class="modal-title">Request Submitted</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Your request has been submitted successfully! 🎉</p>
+                            </div>
+                            <div class="modal-footer border-0">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Side Section -->
+            <div class="col-lg-5 text-center">
+                <img src="../../../assets/images/home/12.jpg" alt="Moving Truck" class="img-fluid rounded shadow mb-3">
+                <div class="trust-box bg-light p-3 rounded shadow-sm">
+                    <p class="mb-1"><i class="bi bi-lightning-charge-fill text-warning"></i> Fast response within 24
+                        hours</p>
+                    <p class="mb-0"><i class="bi bi-shield-check text-success"></i> Affordable and reliable service</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>

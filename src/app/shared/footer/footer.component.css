@@ -163,6 +163,9 @@ footer css
   box-shadow: none;
   background-color: transparent;
 }
+.no-underline {
+  text-decoration: none !important;
+}
 
 .footer-newsletter .subscribe-form .form-control::placeholder {
   color: #F2F3F5;

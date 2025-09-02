@@ -15,6 +15,7 @@ import { GoodsFurnitureComponent } from './pages/services/goods-furniture/goods-
 import { ProvisionAndSupplyComponent } from './pages/services/provision-and-supply/provision-and-supply.component';
 import { FURNITUREFormComponent } from './pages/booking/GOODS/furniture-form/furniture-form.component';
 import { PROVISIONFormComponent } from './pages/booking/provision-form/provision-form.component';
+import { QuoteComponent } from './shared/quote/quote.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PROVISIONFormComponent } from './pages/booking/provision-form/provision
     ProvisionAndSupplyComponent,
     FURNITUREFormComponent,
     PROVISIONFormComponent,
+    QuoteComponent,
     
   ],
   imports: [
