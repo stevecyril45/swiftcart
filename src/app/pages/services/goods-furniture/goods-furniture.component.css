@@ -1,33 +1,9 @@
-/* Define new color variables */
-:root {
-  --deep-teal: #008080;
-  --vibrant-orange: #ffa500;
-  --darker-orange: #e69500; /* A slightly darker orange for hover */
-  --light-teal-bg: #e0f2f2; /* A lighter shade of teal for backgrounds */
-  --light-orange-bg: #fff5e0; /* A lighter shade of orange for backgrounds */
-}
 
-/* Base Styles */
-body {
-  font-family: "Inter", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9fafb; /* bg-gray-50 */
-  color: #333333; /* text-gray-800 */
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  scroll-behavior: smooth; /* Smooth scroll for anchor links */
-}
-#hero{
-  margin-top: -40px;
-}
 /* Section Styling */
 section {
-  padding: 4rem 1rem; /* py-16 px-4 */
-  margin: 1rem; /* m-4 */
   background-color: #ffffff; /* bg-white */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-  border-radius: 0.5rem; /* rounded-lg */
   text-align: center;
 }
 
@@ -374,10 +350,7 @@ iframe {
 /* Responsive Adjustments */
 @media (min-width: 640px) {
   /* sm: breakpoint */
-  section {
-    padding: 4rem 2rem; /* sm:px-8 */
-    margin: 2rem; /* sm:m-8 */
-  }
+ 
   .hero-overlay {
     padding: 2rem; /* sm:p-8 */
   }

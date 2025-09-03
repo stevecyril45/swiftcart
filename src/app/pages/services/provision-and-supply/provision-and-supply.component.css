@@ -85,6 +85,27 @@ p {
     transform: translateY(-2px);
 }
 
+.button- {
+    display: inline-block;
+    background-color:#e69500;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px;
+    min-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-:hover {
+    background-color: #008080;
+    color: white; /* Darker orange */
+    transform: translateY(-2px);
+}
+
 
 
 
